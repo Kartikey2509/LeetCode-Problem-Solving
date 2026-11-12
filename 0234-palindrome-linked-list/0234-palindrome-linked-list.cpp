@@ -11,6 +11,7 @@
 class Solution {
 public:
 
+    //Reverse a linkedList from half
     ListNode* reverseList(ListNode* head2){
         ListNode* prev = NULL;
         ListNode* curr = head2;
@@ -32,13 +33,17 @@ public:
         ListNode* temp = head;
         ListNode* head2 = NULL;
         int count=0;
+
+        //counting the number of nodes
         while(temp!=NULL){
             count++;
             temp=temp->next;
         }
         temp = head;
-        count = count/2;
+        count = count/2;   //Half the nodes
         int cnt = 0;
+
+        //Call the reverseList from half of nodes
         while(temp!=NULL){
             cnt++;
             if(cnt == count+1){
@@ -50,6 +55,8 @@ public:
 
         temp = head;
         ListNode* temp2 = head2;
+
+        // compare both list
         while(temp2!=NULL){
             if(temp->val == temp2->val){
                 temp2=temp2->next;
